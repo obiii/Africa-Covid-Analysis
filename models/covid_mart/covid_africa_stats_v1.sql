@@ -5,7 +5,7 @@ SELECT
 SUM(Total_Recovered) total_recovered,
 (SELECT Max(median) FROM (SELECT PERCENTILE_CONT(Total_Deaths, 0.5) OVER() AS median from {{ source('covid_africa', 'stg_covidAfrica') }})) as median,
 STDDEV(Total_Tests) std_deviation
-FROM {{ source('covid_africa', 'stg_covidAfrica') }}
+FROM {{ ref('stg_covidAfrica') }} 
 )
 
 select * from covid_africa_stats
