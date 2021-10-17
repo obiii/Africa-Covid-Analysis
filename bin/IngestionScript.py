@@ -7,7 +7,7 @@ from google.oauth2 import service_account
 
 
 project_id = 'covid-africa-analysis'
-dataset_id = 'covidAfrica'
+dataset_id = 'covidAfrica_stg'
 table_name = 'stg_covidAfrica'
 file_name = 'covid_africa'
 
