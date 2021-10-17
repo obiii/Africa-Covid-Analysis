@@ -1,0 +1,37 @@
+name: deploy
+on:
+  push:
+    branches:
+      - main
+env:
+    DBT_PROFILE_SA: ${{ secrets.DBT_PROFILE_SA }}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+        matrix:
+          python-version: [3.7]
+    environment: SERVICE_ACCOUNT
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+    - name: execute ingestion script
+      env:
+        SERVICE_ACCOUNT: ${{ secrets.SA_JSON }}
+      run: |
+        python bin/IngestionScript.py
+    - name: deploy to prod
+      run: |
+        dbt run --profiles-dir=ci_profile --target=prod
+    - name: test models
+      run: |
+        dbt test --profiles-dir=ci_profile --target=prod
+    
