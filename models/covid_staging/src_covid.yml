@@ -2,7 +2,7 @@ version: 2
 
 sources:
     - name: covid_africa
-      schema: covidAfrica
+      schema: covidAfrica_stg
       database: covid-africa-analysis
       tables:
         - name: stg_covidAfrica
@@ -10,48 +10,4 @@ sources:
           loader: github.com/obiii/covidAfrican
           meta:
             owner: Obaid Ur Rehman
-
-        - name: covid_africa_stats_v1
-          description: Contains 3 stats for the whole data set i.e total recovered, median deaths, stdev total tests
-          columns:
-          - name: total_recovered
-            description: Total number  of people recovered in the whole data
-            tests:
-            - not_null
-          - name: median
-            description: Median of total deaths in whole data
-            tests:
-            - not_null
-          - name: std_deviation
-            description: Standard deviation of total tests
-            tests:
-            - not_null
-
-        - name: countries_with_si_v1
-          description: Countries ranked with severity index
-          columns:
-          - name: Country
-            description: Name of the country
-            tests:
-            - not_null
-          - name: Total_Cases_1_mil_population
-            description: Number of covid cases in 1  million population
-            tests:
-            - not_null
-          - name: Deaths_1_mil_population_
-            description: Number of covid deaths in 1 million population
-            tests:
-            - not_null
-          - name: deaths_1_mil_rank
-            description: Death rank of the country
-            tests:
-            - not_null
-          - name: total_cases_1_mil_rank
-            description: Total case rank of the country
-            tests:
-            - not_null
-          - name: severity_index
-            description: Severity index of the country (deaths_1_mil_rank * total_cases_1_mil_rank )
-            tests:
-            - not_null
 

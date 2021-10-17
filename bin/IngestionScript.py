@@ -4,10 +4,10 @@ from google.cloud import storage
 from google.cloud.exceptions import NotFound
 import os, sys, json
 from google.oauth2 import service_account
-
+#sc
 
 project_id = 'covid-africa-analysis'
-dataset_id = 'covidAfrica'
+dataset_id = 'covidAfrica_stg'
 table_name = 'stg_covidAfrica'
 file_name = 'covid_africa'
 
