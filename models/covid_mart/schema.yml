@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: top3_covid_stats_v1
+    description: Model to extract stats for top 3 city based on severity index
+    columns:
+        - name: country
+          description: Name of the country
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['Chad', 'Burundi', 'Niger']
+        - name: recovery_ratio
+          description: People recovered in country divided by total recovered
+          tests:
+            - not_null
+        - name: death_ratio
+          description: People died in country divided by total died
+          tests:
+            - not_null
+        - name: tests_ratio
+          description: Tests done in country divided by total tests
+          tests:
+            - not_null
+
+       
+  
