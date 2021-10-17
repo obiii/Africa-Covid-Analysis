@@ -1,0 +1,47 @@
+covidanalysis:
+  outputs:
+    prod:
+      type: bigquery
+      method: service-account-json
+      project: covid-africa-analysis
+      dataset: covidAfrica
+      threads: 5
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      retries: 1
+      keyfile_json:
+        type: "service_account"
+        project_id: "covid-africa-analysis"
+        private_key_id: "bf326b7f8bced9c427283763512d0bd36459c655"
+        private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCjFuqysgpnqYqc\nGqeIILoUZuac/eOgoV2rHfiUiV+3zKjp378SNm6ONNZ+csP/6vgkTDfwLNf1RIV5\ncV2TR39lKf4tf7jC7+HS2dCuMxKptEVAZPgU7xf0rnwDg5Of0B+z0U7IyepV1o65\nsg4cMRpwHD1UVp2lFGP9Tf4Mv/EAIFuKmXYkq+TGQuE29CrlXEv087ra3LQAKEmj\n8fGQom7kJtDBmVjoXvTpRlmHoqTHqwEf1ERryULrGoG9big9THAwriZk97B56lxS\ntEuE/4tB1AqIjGd4ai2bD9Z9gM+P8QqqoigeEJ3QSMq+MOW119en1znDBJGXeS5b\nfmRBQPmTAgMBAAECggEAOo390g7OYY2jsIx5XgyyAqU3Y2Jcmc2V/dwS5fG0ph8a\n/m1RAs78Pp6F7Hx0FqxcT1v2MYtINk1VxtaHDFv9R2seUWOsCIFsCPIfVIwNxVRu\nEMKvt4Roi3ciG3jgRd7JoxwhN0IXmp4gPFfLbR/MKDhbZK58h0qc49NexWEcvDhO\nz40F8N0zc/7WEQwYx9URWUznP+UC9ZKpUI/NhX/jmk9IJaDbzAv7bcjhjz36ZmVq\ndXQ7TQqBavezI6bMJiRghpLstf5aF0nCauP0xPwn+8Hm8YNUtveolNML5xlKEtmw\nhSm80rkaFfcXRYZNMshQHsgmVbZTOJRAhv6gZDs68QKBgQDbLLR7lMZ+rip/UxRE\n6HtN33WxUuKMrDgtjy51MxSPm2trS3pUb3AKUT678CrsyAlIry68FkT5TP/awhZU\nEI4VWPcbXfG9JiqtbEu4HY7lp3Z9gC+F5C7RIJQXObI+sn9PKawSPE4Z9BO8LW8Y\nbCLyBNve3yqNOC+aaoODF7nFZQKBgQC+fdbRoj+nUOJf7tyBe02PMZpRi9j2DuCm\nnDnQFOfhC2Hqno+hAAS0C6Jl0iLcWsMny6Mb6iLM2sdxZTQaGXV/Ns9QCdclHd+8\n8xcXICVe0gcBhHQ6AZdBnz05a76JxRkXXOcuLqMFNWLvI1rqUzL2I+HGiRuGT1Jb\nT0XeirAvlwKBgF+sZByOFRe3b1WlLnPmB+02XmnJhJtjkiJRHjaK1a7aaUms6Ply\nq7XVQU1IyXQS3fqcfgocrn8k3Yrgrl6D24H2E+geWif3QSny3BrCzF3zfAXMrvID\naWxgjESXKvezc19bEYHkUTODGBpMuvIuQhLjjBb909VRcXY2iLHw6WcBAoGAFt0P\nvZWVwkVJBm6q9LeR9Y/kj8kTP2VFvXmezsTTmAU/uWNSpeZUqi+DTGlOWdhi+BHO\n//i4OJJBwfB9smw/2AcCFv83XXMaeZlLujDXi2v1/06gjJ3IQ84TESNHeU241z8F\nWFusoWFpAH7j2KAny7c+0A+AyDwZDHCVWEKZJv0CgYAhTGBS7YKT8GsKP//nkrRQ\nEyj5pLe2DuuLXnbo9RoqaWR+0yrC8T2QkfB5Nr7FMbtTjmpv/NeFC3Fb0za0+YIJ\n3GbO9KsDP71sRWHRbah0qluWSIZx0GDTWG1xuYJcqrPmA3Phq8xLDBln5QszZYuf\nurlDyvy+n5IOcfquwlm45w==\n-----END PRIVATE KEY-----\n"
+        client_email: "obaidserviceaccount2@covid-africa-analysis.iam.gserviceaccount.com"
+        client_id: "111595244651403593663"
+        auth_uri: "https://accounts.google.com/o/oauth2/auth"
+        token_uri: "https://oauth2.googleapis.com/token"
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+        client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/obaidserviceaccount2%40covid-africa-analysis.iam.gserviceaccount.com"
+    
+    dev:
+      type: bigquery
+      method: service-account-json
+      project: covid-africa-analysis
+      dataset: covidAfrica_dev
+      threads: 5
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+      retries: 1
+      keyfile_json:
+        type: "service_account"
+        project_id: "covid-africa-analysis"
+        private_key_id: "bf326b7f8bced9c427283763512d0bd36459c655"
+        private_key: "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCjFuqysgpnqYqc\nGqeIILoUZuac/eOgoV2rHfiUiV+3zKjp378SNm6ONNZ+csP/6vgkTDfwLNf1RIV5\ncV2TR39lKf4tf7jC7+HS2dCuMxKptEVAZPgU7xf0rnwDg5Of0B+z0U7IyepV1o65\nsg4cMRpwHD1UVp2lFGP9Tf4Mv/EAIFuKmXYkq+TGQuE29CrlXEv087ra3LQAKEmj\n8fGQom7kJtDBmVjoXvTpRlmHoqTHqwEf1ERryULrGoG9big9THAwriZk97B56lxS\ntEuE/4tB1AqIjGd4ai2bD9Z9gM+P8QqqoigeEJ3QSMq+MOW119en1znDBJGXeS5b\nfmRBQPmTAgMBAAECggEAOo390g7OYY2jsIx5XgyyAqU3Y2Jcmc2V/dwS5fG0ph8a\n/m1RAs78Pp6F7Hx0FqxcT1v2MYtINk1VxtaHDFv9R2seUWOsCIFsCPIfVIwNxVRu\nEMKvt4Roi3ciG3jgRd7JoxwhN0IXmp4gPFfLbR/MKDhbZK58h0qc49NexWEcvDhO\nz40F8N0zc/7WEQwYx9URWUznP+UC9ZKpUI/NhX/jmk9IJaDbzAv7bcjhjz36ZmVq\ndXQ7TQqBavezI6bMJiRghpLstf5aF0nCauP0xPwn+8Hm8YNUtveolNML5xlKEtmw\nhSm80rkaFfcXRYZNMshQHsgmVbZTOJRAhv6gZDs68QKBgQDbLLR7lMZ+rip/UxRE\n6HtN33WxUuKMrDgtjy51MxSPm2trS3pUb3AKUT678CrsyAlIry68FkT5TP/awhZU\nEI4VWPcbXfG9JiqtbEu4HY7lp3Z9gC+F5C7RIJQXObI+sn9PKawSPE4Z9BO8LW8Y\nbCLyBNve3yqNOC+aaoODF7nFZQKBgQC+fdbRoj+nUOJf7tyBe02PMZpRi9j2DuCm\nnDnQFOfhC2Hqno+hAAS0C6Jl0iLcWsMny6Mb6iLM2sdxZTQaGXV/Ns9QCdclHd+8\n8xcXICVe0gcBhHQ6AZdBnz05a76JxRkXXOcuLqMFNWLvI1rqUzL2I+HGiRuGT1Jb\nT0XeirAvlwKBgF+sZByOFRe3b1WlLnPmB+02XmnJhJtjkiJRHjaK1a7aaUms6Ply\nq7XVQU1IyXQS3fqcfgocrn8k3Yrgrl6D24H2E+geWif3QSny3BrCzF3zfAXMrvID\naWxgjESXKvezc19bEYHkUTODGBpMuvIuQhLjjBb909VRcXY2iLHw6WcBAoGAFt0P\nvZWVwkVJBm6q9LeR9Y/kj8kTP2VFvXmezsTTmAU/uWNSpeZUqi+DTGlOWdhi+BHO\n//i4OJJBwfB9smw/2AcCFv83XXMaeZlLujDXi2v1/06gjJ3IQ84TESNHeU241z8F\nWFusoWFpAH7j2KAny7c+0A+AyDwZDHCVWEKZJv0CgYAhTGBS7YKT8GsKP//nkrRQ\nEyj5pLe2DuuLXnbo9RoqaWR+0yrC8T2QkfB5Nr7FMbtTjmpv/NeFC3Fb0za0+YIJ\n3GbO9KsDP71sRWHRbah0qluWSIZx0GDTWG1xuYJcqrPmA3Phq8xLDBln5QszZYuf\nurlDyvy+n5IOcfquwlm45w==\n-----END PRIVATE KEY-----\n"
+        client_email: "obaidserviceaccount2@covid-africa-analysis.iam.gserviceaccount.com"
+        client_id: "111595244651403593663"
+        auth_uri: "https://accounts.google.com/o/oauth2/auth"
+        token_uri: "https://oauth2.googleapis.com/token"
+        auth_provider_x509_cert_url: "https://www.googleapis.com/oauth2/v1/certs"
+        client_x509_cert_url: "https://www.googleapis.com/robot/v1/metadata/x509/obaidserviceaccount2%40covid-africa-analysis.iam.gserviceaccount.com"
+  target: dev
+  
